@@ -67,7 +67,7 @@ hr {
   font-size: 32px !important;
 }
 
-#work,#about, #team, 
+#photo,#about, #team, 
 #portfolio, #pricing, #contact {
    padding-top: 100px;
   padding-bottom: 100px;
@@ -318,21 +318,21 @@ home section
 }
 
 /* ==========================================================================
-work section
+photo section
 ========================================================================== */
-#work {
+#photo {
     text-align: center;
 }
-#work .col-md-4 {
+#photo .col-md-4 {
   padding: 28px;
   position: relative;
   transition: all 0.4s ease-in-out;
 }
-#work .col-md-4:hover {
+#photo .col-md-4:hover {
   background-color: #ffffff;
   box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.20);
 }
-#work h3 {
+#photo h3 {
   font-size: 18px;
 }
 
