@@ -1,0 +1,21 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: web-site
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_USER: demoUser
+      MYSQL_PASSWORD: demoPassword
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 9000:8080

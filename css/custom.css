@@ -1,0 +1,16 @@
+section#about,
+ a.btn.btn-primary.btn-xl.js-scroll-trigger {
+     background-color: #346d0e !important;
+ }
+
+ hr.divider.my-4 {
+     border-color: #346d0e !important;
+ }
+
+ a.d-block, a.dropdown-toggle, #mainNav .navbar-nav .nav-item .nav-link.active, .text-muted, .text-primary{
+     color: #346d0e !important;
+ }
+ 
+#portfolio .container-fluid .portfolio-box .portfolio-box-caption{
+    background: rgba(52,109,14, .9) !important;
+}
