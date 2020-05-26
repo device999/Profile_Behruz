@@ -1,5 +1,12 @@
 <?php
-$languageData = file_get_contents('./translations/en.json');
+
+if(isset($_GET["lan"]) && $_GET["lan"]!=""){
+    $lan = $_GET["lan"];    
+}else{
+    $lan = "en";
+}
+$ln = array("en"=>"English", "de"=>"German", "ru"=>"Russian");
+$languageData = file_get_contents('./translations/'.$lan.'.json');
 $languageData = json_decode($languageData);
 $navMenu = $languageData->menu;
 $header = $languageData->header;
@@ -16,8 +23,7 @@ $contact = $languageData->contact;
 <head>
     <meta charset="utf-8">
     <meta name="robots" content="noindex, nofollow">
-
-    <title>Panels with nav tabs - Bootsnipp.com</title>
+    <title>Admin Side</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"
         id="bootstrap-css">
@@ -38,13 +44,26 @@ $contact = $languageData->contact;
         </div>
         <div class="row">
             <div class="col-md-12">
-                <select class="form-control">
-                    <option value="en" selected>English</option>
-                    <option value="de">Deutch</option>
-                    <option value="ru">Russian</option>
+                <select class="form-control" id="language">
+                <?php
+                    foreach($ln as $key => $value){
+                        if($key == $lan){
+                            echo "<option value='".$key."' selected>".$value."</option>";
+                        }
+                        else{
+                            echo "<option value='".$key."'>".$value."</option>";
+                        }
+                    }
+                ?>
                 </select>
             </div>
-            <hr/>
+            <script>
+                $('#language').on('change', function () {
+                    window.location.replace("tab.php?lan="+this.value);
+                });
+            </script>
+
+            <hr />
             <div class="col-md-12">
                 <div class="panel with-nav-tabs panel-primary">
                     <div class="panel-heading">
@@ -60,7 +79,9 @@ $contact = $languageData->contact;
                     <div class="panel-body">
                         <div class="tab-content">
                             <div class="tab-pane fade in active" id="navMenu">
-                                <form>
+                                <form action="submit.php" method="POST">
+                                    <input type="hidden" value="menu" name="menuType">
+                                    <input type="hidden" value="<?php echo $lan; ?>" name="lan">
                                     <div class="form-inline">
                                         <h3>Main menu</h3>
                                         <div class="form-group">
@@ -74,7 +95,7 @@ $contact = $languageData->contact;
                                         </div>
                                         <div class="form-group">
                                             <input type="text" class="form-control"
-                                                value="<?php echo $navMenu->services; ?>" name="portfolio"
+                                                value="<?php echo $navMenu->portfolio; ?>" name="portfolio"
                                                 placeholder="Portfolio">
                                         </div>
                                         <div class="form-group">
@@ -88,8 +109,10 @@ $contact = $languageData->contact;
                                 </form>
                             </div>
                             <div class="tab-pane fade" id="header">
-                                <form>
+                                <form action="submit.php" method="POST">
                                     <h3>Header</h3>
+                                    <input type="hidden" value="header" name="menuType">
+                                    <input type="hidden" value="<?php echo $lan; ?>" name="lan">
                                     <div class="form-group">
                                         <textarea class="form-control" rows="3"
                                             name="headerTitle"><?php echo $header->title; ?></textarea>
@@ -106,9 +129,11 @@ $contact = $languageData->contact;
                                 </form>
                             </div>
                             <div class="tab-pane fade" id="about">
-                                <form>
+                                <form action="submit.php" method="POST">
 
                                     <h3>About</h3>
+                                    <input type="hidden" value="about" name="menuType">
+                                    <input type="hidden" value="<?php echo $lan; ?>" name="lan">
                                     <div class="form-group">
                                         <textarea class="form-control" rows="3"
                                             name="aboutTitle"><?php echo $about->title; ?></textarea>
@@ -127,8 +152,10 @@ $contact = $languageData->contact;
                             </div>
 
                             <div class="tab-pane fade" id="services">
-                                <form>
+                                <form action="submit.php" method="POST">
                                     <h3>Services</h3>
+                                    <input type="hidden" value="service" name="menuType">
+                                    <input type="hidden" value="<?php echo $lan; ?>" name="lan">
                                     <div class="form-group">
                                         <input type="text" class="form-control" value="<?php echo $service->title; ?>"
                                             name="serviceTitle" placeholder="Title">
@@ -155,9 +182,11 @@ $contact = $languageData->contact;
                             </div>
                             <div class="tab-pane fade" id="portfolio">
 
-                                <form>
+                                <form action="submit.php" method="POST">
 
                                     <h3>Portfolio</h3>
+                                    <input type="hidden" value="portfolio" name="menuType">
+                                    <input type="hidden" value="<?php echo $lan; ?>" name="lan">
                                     <?php
                                         $counter = 0;
                                         foreach($projects as $project){                                        
@@ -184,23 +213,25 @@ $contact = $languageData->contact;
 
                             </div>
                             <div class="tab-pane fade" id="contact">
-                                <form>
+                                <form action="submit.php" method="POST">
                                     <h3>Contact</h3>
+                                    <input type="hidden" value="contact" name="menuType">
+                                    <input type="hidden" value="<?php echo $lan; ?>" name="lan">
                                     <div class="form-group">
                                         <input type="text" class="form-control" value="<?php echo $contact->title; ?>"
-                                            name="todoTitle<?php echo $counter;?>" placeholder="Contact title">
+                                            name="contactTitle" placeholder="Contact title">
                                     </div>
                                     <div class="form-group">
-                                        <textarea class="form-control"
+                                        <textarea class="form-control" name="contactSubtitle"
                                             rows="3"><?php echo $contact->subtitle; ?></textarea>
                                     </div>
                                     <div class="form-group">
                                         <input type="email" class="form-control" value="<?php echo $contact->email; ?>"
-                                            name="todoTitle<?php echo $counter;?>" placeholder="Email">
+                                            name="contactEmail" placeholder="Email">
                                     </div>
                                     <div class="form-group">
                                         <input type="text" class="form-control" value="<?php echo $contact->number; ?>"
-                                            name="todoTitle<?php echo $counter;?>" placeholder="Number">
+                                            name="contactNumber" placeholder="Number">
                                     </div>
                                     <button type="submit" class="btn btn-default">Submit</button>
                                 </form>

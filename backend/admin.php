@@ -5,7 +5,6 @@ $password = $_POST["password"];
 
 if($login=="demo" && $password =="12345"){
     print "Success";
-}else{
 }
 $homepage = file_get_contents('./translations/en.json');
 echo $homepage;

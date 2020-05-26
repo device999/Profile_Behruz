@@ -1,5 +1,5 @@
 <?php
-$languageData = file_get_contents('./backend/translations/de.json');
+$languageData = file_get_contents('../backend/translations/ru.json');
 $languageData = json_decode($languageData);
 $navMenu = $languageData->menu;
 $header = $languageData->header;
@@ -71,8 +71,8 @@ $contact = $languageData->contact;
           </li>
       <li class="dropdown nav-item"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="flag-icon flag-icon-de"></span><span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a class="nav-link js-scroll-trigger flag" href="./en/"><span class="flag-icon flag-icon-gb"></span></a></li>
-          <li><a class="nav-link js-scroll-trigger flag" href="./ru/"><span class="flag-icon flag-icon-ru"></span></a></li>
+          <li><a class="nav-link js-scroll-trigger flag" href="#contact2"><span class="flag-icon flag-icon-gb"></span></a></li>
+          <li><a class="nav-link js-scroll-trigger flag" href="#contact7"><span class="flag-icon flag-icon-ru"></span></a></li>
         </ul>
       </li>
         </ul>

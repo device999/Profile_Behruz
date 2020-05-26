@@ -1,3 +1,15 @@
+<?php
+$languageData = file_get_contents('../backend/translations/en.json');
+$languageData = json_decode($languageData);
+$navMenu = $languageData->menu;
+$header = $languageData->header;
+$about = $languageData->about;
+$service = $languageData->service;
+$projects = $languageData->projects;
+$contact = $languageData->contact;
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +20,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Creative - Start Bootstrap Theme</title>
+  <title>It Systemen</title>
 
   <!-- Font Awesome Icons -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -22,32 +34,47 @@
 
   <!-- Theme CSS - Includes Bootstrap -->
   <link href="css/creative.min.css" rel="stylesheet">
+  <link href="css/custom.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.3.0/css/flag-icon.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.3.0/css/flag-icon.min.css">
 
 </head>
+<style>
+.dropdown-menu{
+  min-width:4rem!important;
+}
+</style>
+
 
 <body id="page-top">
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">It Systemen</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto my-2 my-lg-0">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">About</a>
+            <a class="nav-link js-scroll-trigger" href="#about"><?php echo $navMenu->about ?></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+            <a class="nav-link js-scroll-trigger" href="#services"><?php echo $navMenu->services; ?></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+            <a class="nav-link js-scroll-trigger" href="#portfolio"><?php echo $navMenu->portfolio;?></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            <a class="nav-link js-scroll-trigger" href="#contact"><?php echo $navMenu->contact; ?></a>
           </li>
+      <li class="dropdown nav-item"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="flag-icon flag-icon-de"></span><span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a class="nav-link js-scroll-trigger flag" href="#contact2"><span class="flag-icon flag-icon-gb"></span></a></li>
+          <li><a class="nav-link js-scroll-trigger flag" href="#contact7"><span class="flag-icon flag-icon-ru"></span></a></li>
+        </ul>
+      </li>
         </ul>
       </div>
     </div>
@@ -58,12 +85,12 @@
     <div class="container h-100">
       <div class="row h-100 align-items-center justify-content-center text-center">
         <div class="col-lg-10 align-self-end">
-          <h1 class="text-uppercase text-white font-weight-bold">Your Favorite Source of Free Bootstrap Themes</h1>
+          <h1 class="text-uppercase text-white font-weight-bold"><?php echo $header->title; ?></h1>
           <hr class="divider my-4">
         </div>
         <div class="col-lg-8 align-self-baseline">
-          <p class="text-white-75 font-weight-light mb-5">Start Bootstrap can help you build better websites using the Bootstrap framework! Just download a theme and start customizing, no strings attached!</p>
-          <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
+          <p class="text-white-75 font-weight-light mb-5"><?php echo $header->subtitle; ?></p>
+          <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about"><?php echo $header->button; ?></a>
         </div>
       </div>
     </div>
@@ -74,10 +101,10 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8 text-center">
-          <h2 class="text-white mt-0">We've got what you need!</h2>
+          <h2 class="text-white mt-0"><?php echo $about->title; ?></h2>
           <hr class="divider light my-4">
-          <p class="text-white-50 mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! Choose one of our open source, free to download, and easy to use themes! No strings attached!</p>
-          <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
+          <p class="text-white-50 mb-4"><?php echo $about->subtitle; ?></p>
+          <a class="btn btn-light btn-xl js-scroll-trigger" href="#services"><?php echo $about->button; ?></a>
         </div>
       </div>
     </div>
@@ -86,35 +113,35 @@
   <!-- Services Section -->
   <section class="page-section" id="services">
     <div class="container">
-      <h2 class="text-center mt-0">At Your Service</h2>
+      <h2 class="text-center mt-0"><?php echo $service->title; ?></h2>
       <hr class="divider my-4">
       <div class="row">
         <div class="col-lg-3 col-md-6 text-center">
           <div class="mt-5">
             <i class="fas fa-4x fa-gem text-primary mb-4"></i>
-            <h3 class="h4 mb-2">Sturdy Themes</h3>
-            <p class="text-muted mb-0">Our themes are updated regularly to keep them bug free!</p>
+            <h3 class="h4 mb-2"><?php echo $service->todos[0]->title; ?></h3>
+            <p class="text-muted mb-0"><?php echo $service->todos[0]->subtitle; ?></p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 text-center">
           <div class="mt-5">
             <i class="fas fa-4x fa-laptop-code text-primary mb-4"></i>
-            <h3 class="h4 mb-2">Up to Date</h3>
-            <p class="text-muted mb-0">All dependencies are kept current to keep things fresh.</p>
+            <h3 class="h4 mb-2"><?php echo $service->todos[1]->title; ?></h3>
+            <p class="text-muted mb-0"><?php echo $service->todos[1]->subtitle; ?></p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 text-center">
           <div class="mt-5">
             <i class="fas fa-4x fa-globe text-primary mb-4"></i>
-            <h3 class="h4 mb-2">Ready to Publish</h3>
-            <p class="text-muted mb-0">You can use this design as is, or you can make changes!</p>
+            <h3 class="h4 mb-2"><?php echo $service->todos[2]->title; ?></h3>
+            <p class="text-muted mb-0"><?php echo $service->todos[2]->subtitle; ?></p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 text-center">
           <div class="mt-5">
             <i class="fas fa-4x fa-heart text-primary mb-4"></i>
-            <h3 class="h4 mb-2">Made with Love</h3>
-            <p class="text-muted mb-0">Is it really open source if it's not made with love?</p>
+            <h3 class="h4 mb-2"><?php echo $service->todos[3]->title; ?></h3>
+            <p class="text-muted mb-0"><?php echo $service->todos[3]->subtitle; ?></p>
           </div>
         </div>
       </div>
@@ -130,10 +157,10 @@
             <img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
-                Category
+              <?php echo  $projects[0]->name ?>
               </div>
               <div class="project-name">
-                Project Name
+              <?php echo  $projects[0]->category ?>
               </div>
             </div>
           </a>
@@ -143,10 +170,10 @@
             <img class="img-fluid" src="img/portfolio/thumbnails/2.jpg" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
-                Category
+              <?php echo  $projects[1]->name ?>
               </div>
               <div class="project-name">
-                Project Name
+              <?php echo  $projects[1]->category ?>
               </div>
             </div>
           </a>
@@ -156,10 +183,10 @@
             <img class="img-fluid" src="img/portfolio/thumbnails/3.jpg" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
-                Category
+              <?php echo  $projects[2]->name ?>
               </div>
               <div class="project-name">
-                Project Name
+              <?php echo  $projects[2]->category ?>
               </div>
             </div>
           </a>
@@ -169,10 +196,10 @@
             <img class="img-fluid" src="img/portfolio/thumbnails/4.jpg" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
-                Category
+              <?php echo  $projects[3]->name ?>
               </div>
               <div class="project-name">
-                Project Name
+              <?php echo  $projects[3]->category ?>
               </div>
             </div>
           </a>
@@ -182,10 +209,10 @@
             <img class="img-fluid" src="img/portfolio/thumbnails/5.jpg" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
-                Category
+              <?php echo  $projects[4]->name ?>
               </div>
               <div class="project-name">
-                Project Name
+              <?php echo  $projects[4]->category ?>
               </div>
             </div>
           </a>
@@ -195,10 +222,10 @@
             <img class="img-fluid" src="img/portfolio/thumbnails/6.jpg" alt="">
             <div class="portfolio-box-caption p-3">
               <div class="project-category text-white-50">
-                Category
+              <?php echo  $projects[5]->name ?>
               </div>
               <div class="project-name">
-                Project Name
+              <?php echo  $projects[5]->category ?>
               </div>
             </div>
           </a>
@@ -212,20 +239,20 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8 text-center">
-          <h2 class="mt-0">Let's Get In Touch!</h2>
+          <h2 class="mt-0"><?php echo $contact->title; ?></h2>
           <hr class="divider my-4">
-          <p class="text-muted mb-5">Ready to start your next project with us? Give us a call or send us an email and we will get back to you as soon as possible!</p>
+          <p class="text-muted mb-5"><?php echo $contact->subtitle; ?></p>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-4 ml-auto text-center">
           <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
-          <div>+1 (202) 555-0149</div>
+          <div><?php echo $contact->number; ?></div>
         </div>
         <div class="col-lg-4 mr-auto text-center">
           <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
           <!-- Make sure to change the email address in anchor text AND the link below! -->
-          <a class="d-block" href="mailto:contact@yourwebsite.com">contact@yourwebsite.com</a>
+          <a class="d-block" href="mailto:<?php echo $contact->email;?>"><?php echo $contact->email; ?></a>
         </div>
       </div>
     </div>
@@ -234,7 +261,7 @@
   <!-- Footer -->
   <footer class="bg-light py-5">
     <div class="container">
-      <div class="small text-center text-muted">Copyright &copy; 2019 - Start Bootstrap</div>
+      <div class="small text-center text-muted">&copy; 2019</div>
     </div>
   </footer>
 
