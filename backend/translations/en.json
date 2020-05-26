@@ -29,8 +29,10 @@
                 "title": "Made with Love",
                 "subtitle": "Is it really open source if it's not made with love?"
             }
-        ],
-        "projects":[
+        ]
+    },
+    "projects":
+    [
             {
                 "name":"Name 1",
                 "category":"Computers"
@@ -55,8 +57,7 @@
                 "name":"Name 6",
                 "category":"Pictures"
             }
-        ]
-    },
+    ],
     "about":{
         "title":"We've got what you need!",
         "subtitle": "Start Bootstrap has everything you need to get your new website up and running in no time! Choose one of our open source, free to download, and easy to use themes! No strings attached!",
