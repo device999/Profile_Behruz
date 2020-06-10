@@ -79,7 +79,11 @@ $contact = $languageData->contact;
       </div>
     </div>
   </nav>
-
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+  AOS.init();
+</script>
   <!-- Masthead -->
   <header class="masthead">
     <div class="container h-100">
@@ -98,7 +102,7 @@ $contact = $languageData->contact;
 
   <!-- About Section -->
   <section class="page-section bg-primary" id="about">
-    <div class="container">
+    <div class="container" data-aos="fade-up" data-aos-duration="3000">
       <div class="row justify-content-center">
         <div class="col-lg-8 text-center">
           <h2 class="text-white mt-0"><?php echo $about->title; ?></h2>
@@ -112,7 +116,7 @@ $contact = $languageData->contact;
 
   <!-- Services Section -->
   <section class="page-section" id="services">
-    <div class="container">
+    <div class="container" data-aos="fade-down" data-aos-duration="3000">
       <h2 class="text-center mt-0"><?php echo $service->title; ?></h2>
       <hr class="divider my-4">
       <div class="row">
@@ -152,7 +156,7 @@ $contact = $languageData->contact;
   <section id="portfolio">
     <div class="container-fluid p-0">
       <div class="row no-gutters">
-        <div class="col-lg-4 col-sm-6">
+        <div class="col-lg-4 col-sm-6" data-aos="zoom-in-up" data-aos-duration="1000">
           <a class="portfolio-box" href="img/portfolio/fullsize/1.jpg">
             <img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="">
             <div class="portfolio-box-caption">
@@ -165,7 +169,7 @@ $contact = $languageData->contact;
             </div>
           </a>
         </div>
-        <div class="col-lg-4 col-sm-6">
+        <div class="col-lg-4 col-sm-6" data-aos="zoom-in-up" data-aos-duration="2000">
           <a class="portfolio-box" href="img/portfolio/fullsize/2.jpg">
             <img class="img-fluid" src="img/portfolio/thumbnails/2.jpg" alt="">
             <div class="portfolio-box-caption">
@@ -178,7 +182,7 @@ $contact = $languageData->contact;
             </div>
           </a>
         </div>
-        <div class="col-lg-4 col-sm-6">
+        <div class="col-lg-4 col-sm-6" data-aos="zoom-in-up" data-aos-duration="3000">
           <a class="portfolio-box" href="img/portfolio/fullsize/3.jpg">
             <img class="img-fluid" src="img/portfolio/thumbnails/3.jpg" alt="">
             <div class="portfolio-box-caption">
@@ -191,7 +195,7 @@ $contact = $languageData->contact;
             </div>
           </a>
         </div>
-        <div class="col-lg-4 col-sm-6">
+        <div class="col-lg-4 col-sm-6" data-aos="zoom-in-up" data-aos-duration="1000">
           <a class="portfolio-box" href="img/portfolio/fullsize/4.jpg">
             <img class="img-fluid" src="img/portfolio/thumbnails/4.jpg" alt="">
             <div class="portfolio-box-caption">
@@ -204,7 +208,7 @@ $contact = $languageData->contact;
             </div>
           </a>
         </div>
-        <div class="col-lg-4 col-sm-6">
+        <div class="col-lg-4 col-sm-6" data-aos="zoom-in-up" data-aos-duration="2000">
           <a class="portfolio-box" href="img/portfolio/fullsize/5.jpg">
             <img class="img-fluid" src="img/portfolio/thumbnails/5.jpg" alt="">
             <div class="portfolio-box-caption">
@@ -217,7 +221,7 @@ $contact = $languageData->contact;
             </div>
           </a>
         </div>
-        <div class="col-lg-4 col-sm-6">
+        <div class="col-lg-4 col-sm-6" data-aos="zoom-in-up" data-aos-duration="3000">
           <a class="portfolio-box" href="img/portfolio/fullsize/6.jpg">
             <img class="img-fluid" src="img/portfolio/thumbnails/6.jpg" alt="">
             <div class="portfolio-box-caption p-3">
@@ -236,7 +240,7 @@ $contact = $languageData->contact;
 
   <!-- Contact Section -->
   <section class="page-section" id="contact">
-    <div class="container">
+    <div class="container" data-aos="zoom-in" data-aos-duration="3000">
       <div class="row justify-content-center">
         <div class="col-lg-8 text-center">
           <h2 class="mt-0"><?php echo $contact->title; ?></h2>
@@ -275,7 +279,6 @@ $contact = $languageData->contact;
 
   <!-- Custom scripts for this template -->
   <script src="js/creative.min.js"></script>
-
 </body>
 
 </html>

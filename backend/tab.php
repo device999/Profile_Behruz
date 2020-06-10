@@ -1,4 +1,13 @@
 <?php
+$login = $_POST["login"];
+$password = $_POST["password"];
+
+if($login=="demo" && $password =="12345"){
+   
+}else{
+    header('Location: index.php');
+}
+
 
 if(isset($_GET["lan"]) && $_GET["lan"]!=""){
     $lan = $_GET["lan"];    

@@ -23,18 +23,18 @@ $contact = $languageData->contact;
   <title>It Systemen</title>
 
   <!-- Font Awesome Icons -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
 
   <!-- Plugin CSS -->
-  <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+  <link href="../vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
   <!-- Theme CSS - Includes Bootstrap -->
-  <link href="css/creative.min.css" rel="stylesheet">
-  <link href="css/custom.css" rel="stylesheet">
+  <link href="../css/creative.min.css" rel="stylesheet">
+  <link href="../css/custom.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.3.0/css/flag-icon.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.3.0/css/flag-icon.min.css">
 
@@ -69,10 +69,10 @@ $contact = $languageData->contact;
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#contact"><?php echo $navMenu->contact; ?></a>
           </li>
-      <li class="dropdown nav-item"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="flag-icon flag-icon-de"></span><span class="caret"></span></a>
+      <li class="dropdown nav-item"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="flag-icon flag-icon-ru"></span><span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a class="nav-link js-scroll-trigger flag" href="#contact2"><span class="flag-icon flag-icon-gb"></span></a></li>
-          <li><a class="nav-link js-scroll-trigger flag" href="#contact7"><span class="flag-icon flag-icon-ru"></span></a></li>
+          <li><a class="nav-link js-scroll-trigger flag" href="../de/"><span class="flag-icon flag-icon-de"></span></a></li>
+          <li><a class="nav-link js-scroll-trigger flag" href="../en/"><span class="flag-icon flag-icon-gb"></span></a></li>
         </ul>
       </li>
         </ul>
@@ -153,8 +153,8 @@ $contact = $languageData->contact;
     <div class="container-fluid p-0">
       <div class="row no-gutters">
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/1.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="">
+          <a class="portfolio-box" href="../img/portfolio/fullsize/1.jpg">
+            <img class="img-fluid" src="../img/portfolio/thumbnails/1.jpg" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
               <?php echo  $projects[0]->name ?>
@@ -166,8 +166,8 @@ $contact = $languageData->contact;
           </a>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/2.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/2.jpg" alt="">
+          <a class="portfolio-box" href="../img/portfolio/fullsize/2.jpg">
+            <img class="img-fluid" src="../img/portfolio/thumbnails/2.jpg" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
               <?php echo  $projects[1]->name ?>
@@ -179,8 +179,8 @@ $contact = $languageData->contact;
           </a>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/3.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/3.jpg" alt="">
+          <a class="portfolio-box" href="../img/portfolio/fullsize/3.jpg">
+            <img class="img-fluid" src="../img/portfolio/thumbnails/3.jpg" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
               <?php echo  $projects[2]->name ?>
@@ -192,8 +192,8 @@ $contact = $languageData->contact;
           </a>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/4.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/4.jpg" alt="">
+          <a class="portfolio-box" href="../img/portfolio/fullsize/4.jpg">
+            <img class="img-fluid" src="../img/portfolio/thumbnails/4.jpg" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
               <?php echo  $projects[3]->name ?>
@@ -205,8 +205,8 @@ $contact = $languageData->contact;
           </a>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/5.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/5.jpg" alt="">
+          <a class="portfolio-box" href="../img/portfolio/fullsize/5.jpg">
+            <img class="img-fluid" src="../img/portfolio/thumbnails/5.jpg" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
               <?php echo  $projects[4]->name ?>
@@ -218,8 +218,8 @@ $contact = $languageData->contact;
           </a>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/6.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/6.jpg" alt="">
+          <a class="portfolio-box" href="../img/portfolio/fullsize/6.jpg">
+            <img class="img-fluid" src="../img/portfolio/thumbnails/6.jpg" alt="">
             <div class="portfolio-box-caption p-3">
               <div class="project-category text-white-50">
               <?php echo  $projects[5]->name ?>
@@ -266,15 +266,15 @@ $contact = $languageData->contact;
   </footer>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="../vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
   <!-- Custom scripts for this template -->
-  <script src="js/creative.min.js"></script>
+  <script src="../js/creative.min.js"></script>
 
 </body>
 
